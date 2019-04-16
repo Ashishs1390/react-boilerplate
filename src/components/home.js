@@ -11,11 +11,17 @@ class Home extends React.Component{
         this.props.fetchPosts();
     }
     render(){
-        console.log(this.props.posts);
-
+        let {posts} =this.props;
+        const postItems = posts.map(post =>(
+            <div key = {post.id}>
+                <h3>{post.title}</h3>
+                <p>{post.body}</p>
+            </div>
+        ))
         return (
             <div>
                 <p>Home Page</p>
+                {postItems}
             </div>
         )
     }

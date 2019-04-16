@@ -11,13 +11,16 @@ import Topics from './components/topics.js'
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      <div>
+        <Provider store={store}>
         <Router>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/topics" component={Topics} />
         </Router>
       </Provider>
+      </div>
+      
     );
   }
 }
